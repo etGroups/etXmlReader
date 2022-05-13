@@ -53,7 +53,15 @@ function etXmlReader(filename, recordRegEx, options) {
 		}
 
 		let child = {};
-		node.children[name] = child;
+		if (node.children[name] === undefined) {
+			node.children[name] = child;
+		} else {
+			if (Array.isArray(node.children[name])) {
+				node.children[name].push(child);
+			} else {
+				node.children[name] = [node.children[name], child];
+			}
+		}
 
 		if (Object.keys(attrs).length > 0) {
 			child.attrs = attrs;

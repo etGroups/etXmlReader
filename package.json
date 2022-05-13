@@ -1,6 +1,6 @@
 {
 	"name": "@etgroups/etxmlreader",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "The library use node-expat to parse large files",
 	"main": "index.js",
 	"type": "module",
